@@ -87,7 +87,9 @@ def get_current_events(feed_url_or_path, files):
             if config.get('ICAL_FEED_USER') and config.get('ICAL_FEED_PASS'):
                 headers = urllib3.make_headers(basic_auth='{}:{}'.format(config.get('ICAL_FEED_USER'), config.get('ICAL_FEED_PASS')))
             if config.get('ICAL_BEARER_TOKEN'):
-                headers = urllib3.make_headers(Authentication='Bearer {}'.format(config.get('ICAL_BEARER_TOKEN')))
+                headers = {
+                    'Authorization': f'Bearer {config.get('ICAL_BEARER_TOKEN')}'
+                }
                 
             if not config.get('ICAL_FEED_VERIFY_SSL_CERT', True):
                 urllib3.disable_warnings(InsecureRequestWarning)
