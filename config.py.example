@@ -23,6 +23,9 @@ ICAL_FEEDS = [
 ICAL_FEED_USER = None
 ICAL_FEED_PASS = None
 
+# Or use a bearer token
+ICAL_BEARER_TOKEN = None
+
 # If the iCalendar server is using a self signed ssl certificate, certificate checking must be disabled.
 # This option applies to all feeds where 'files' is False
 # If unsure left it to True
