@@ -286,7 +286,7 @@ if __name__ == '__main__':
                 logger.info(u'> gcal has description "{}"'.format(gcal_has_description))
                 logger.info(u'> ical has description "{}"'.format(ical_has_description))
                 logger.info(u'> gcal description "{}"'.format(gcal_event.get('description')))
-                logger.info(u'> ical description "{}"'.format(ical_event.description)
+                logger.info(u'> ical description "{}"'.format(ical_event.description))
                             
                 # check if the iCal event has a different: start/end time, name, location,
                 # or description, and if so sync the changes to the GCal event
