@@ -263,7 +263,7 @@ if __name__ == '__main__':
                 ical_has_location = bool(ical_event.location)
 
                 gcal_has_description = 'description' in gcal_event
-                ical_has_description = ical_event.description is not None
+                ical_has_description = ical_event.description is not None and ical_event.description != ""
 
                 # event name can be left unset, in which case there's no summary field
                 gcal_name = gcal_event.get('summary', None)
