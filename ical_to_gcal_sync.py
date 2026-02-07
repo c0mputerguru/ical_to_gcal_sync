@@ -269,6 +269,11 @@ if __name__ == '__main__':
                 locs_differ = gcal_has_location != ical_has_location and gcal_event.get('location') != ical_event.location
                 descs_differ = gcal_has_description != ical_has_description and (gcal_event.get('description') != ical_event.description)
 
+                logger.info(u'> gcal has description "{}"'.format(gcal_has_description))
+                logger.info(u'> ical has description "{}"'.format(ical_has_description))
+                logger.info(u'> gcal description "{}"'.format(gcal_event.get('description')))
+                logger.info(u'> ical description "{}"'.format(ical_event.description)
+
                 needs_undelete = config.get('RESTORE_DELETED_EVENTS', False) and gcal_event['status'] == 'cancelled'
 
                 changes = []
